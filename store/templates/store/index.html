@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-evenly">
+{% for product in products %}
+
+<div class="card" style="width: 18rem;">
+     <img src="{{ product.thumbnail.url }}" alt=" product.name" class="card-img-top" style="max-width: 250px;">
+  <div class="card-body">
+    <h5 class="card-title">{{ product.name }}</h5>
+    <p class="card-text">{{ product.description }}</p>
+<a href="{{ product.get_absolute_url }}" class="btn btn-primary">Voir l'article</a>
+  </div>
+</div>
+
+
+
+{% endfor %}
+</div>
+{% endblock %}
